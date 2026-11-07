@@ -1,0 +1,5 @@
+# All crawlers welcome, including AI search (GPTBot, OAI-SearchBot, ClaudeBot, PerplexityBot, Google-Extended).
+User-agent: *
+Allow: /
+
+Sitemap: https://www.safalkumarshrestha.com.np/sitemap.xml

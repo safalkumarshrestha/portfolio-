@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hydroponics AI: RL Nutrient Dosing | Safal Kumar Shrestha</title>
+  <link rel="icon" type="image/svg+xml" href="/static/img/favicon.svg">
+  <link rel="apple-touch-icon" href="/static/img/web/safal-480.jpg">
+  <meta name="description" content="Hydroponics AI doses nutrients with a reinforcement-learning policy fed by live ESP32 sensor data. Funded by Nepal’s STEAM research grant; hardware by DFRobot.">
+  <meta name="author" content="Safal Kumar Shrestha">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <meta name="theme-color" content="#f7f6f2" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f0f0e" media="(prefers-color-scheme: dark)">
+  <meta name="color-scheme" content="light dark">
+  <link rel="canonical" href="https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/">
+
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Hydroponics AI: RL Nutrient Dosing | Safal Kumar Shrestha">
+  <meta property="og:description" content="Hydroponics AI doses nutrients with a reinforcement-learning policy fed by live ESP32 sensor data. Funded by Nepal’s STEAM research grant; hardware by DFRobot.">
+  <meta property="og:url" content="https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/">
+  <meta property="og:site_name" content="Safal Kumar Shrestha">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:image" content="https://www.safalkumarshrestha.com.np/static/img/web/safal-480.jpg">
+  <meta property="og:image:width" content="480">
+  <meta property="og:image:height" content="480">
+  <meta property="og:image:alt" content="Portrait of Safal Kumar Shrestha">
+  <meta name="twitter:card" content="summary">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="/static/index.css">
+  <script>
+    /* Set before first paint so animated elements start in place; without JS the page stays static and fully visible. */
+    document.documentElement.classList.add('motion');
+  </script>
+  <script src="/static/js/site.js" defer></script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/#webpage",
+        "url": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/",
+        "name": "Hydroponics AI: RL Nutrient Dosing | Safal Kumar Shrestha",
+        "description": "Hydroponics AI doses nutrients with a reinforcement-learning policy fed by live ESP32 sensor data. Funded by Nepal’s STEAM research grant; hardware by DFRobot.",
+        "inLanguage": "en",
+        "dateModified": "2026-11-08",
+        "isPartOf": {
+          "@type": "WebSite",
+          "@id": "https://www.safalkumarshrestha.com.np/#website",
+          "url": "https://www.safalkumarshrestha.com.np/",
+          "name": "Safal Kumar Shrestha"
+        },
+        "breadcrumb": {
+          "@id": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/#breadcrumb"
+        },
+        "author": {
+          "@type": "Person",
+          "@id": "https://www.safalkumarshrestha.com.np/#person",
+          "name": "Safal Kumar Shrestha",
+          "url": "https://www.safalkumarshrestha.com.np/"
+        },
+        "about": {
+          "@id": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/#project"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://www.safalkumarshrestha.com.np/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Projects",
+            "item": "https://www.safalkumarshrestha.com.np/projects/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Hydroponics AI",
+            "item": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/"
+          }
+        ]
+      },
+      {
+        "@type": "CreativeWork",
+        "@id": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/#project",
+        "name": "Hydroponics AI",
+        "description": "Hydroponics AI doses nutrients with a reinforcement-learning policy fed by live ESP32 sensor data. Funded by Nepal’s STEAM research grant; hardware by DFRobot.",
+        "creator": {
+          "@type": "Person",
+          "@id": "https://www.safalkumarshrestha.com.np/#person",
+          "name": "Safal Kumar Shrestha",
+          "url": "https://www.safalkumarshrestha.com.np/"
+        },
+        "dateCreated": "2026",
+        "url": "https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/",
+        "funder": {
+          "@type": "Organization",
+          "name": "Ministry of Education, Science and Technology, Nepal"
+        },
+        "sponsor": {
+          "@type": "Organization",
+          "name": "DFRobot",
+          "url": "https://www.dfrobot.com"
+        },
+        "keywords": "hydroponics, reinforcement learning, IoT, ESP32, MQTT, PyTorch, Nepal"
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <a href="#main" class="skip">Skip to content</a>
+
+  <header class="site-header">
+    <div class="wrap header-inner">
+      <a href="/" class="brand"><span class="brand-mark" aria-hidden="true"></span>Safal Kumar Shrestha</a>
+      <nav class="nav" aria-label="Main">
+        <ul>
+          <li><a href="/projects/" aria-current="true">Work</a></li>
+          <li><a href="/#about">About</a></li>
+          <li><a href="/#experience">Experience</a></li>
+          <li><a href="/#research">Research</a></li>
+          <li><a href="/#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="header-actions">
+        <a class="btn btn-sm" href="/static/safal_cv.pdf">CV <span class="arrow arrow-down" aria-hidden="true">↓</span></a>
+        <button type="button" class="menu-button" popovertarget="menu" aria-label="Open menu">Menu</button>
+      </div>
+    </div>
+  </header>
+
+  <div id="menu" class="menu" popover>
+    <div class="wrap">
+      <div class="menu-head">
+        <span class="brand"><span class="brand-mark" aria-hidden="true"></span>Safal Kumar Shrestha</span>
+        <button type="button" class="menu-button" popovertarget="menu" popovertargetaction="hide">Close</button>
+      </div>
+      <nav aria-label="Menu">
+        <ol class="menu-links">
+          <li><a href="/projects/"><span>01</span>Work</a></li>
+          <li><a href="/#about"><span>02</span>About</a></li>
+          <li><a href="/#experience"><span>03</span>Experience</a></li>
+          <li><a href="/#skills"><span>04</span>Skills</a></li>
+          <li><a href="/#research"><span>05</span>Research</a></li>
+          <li><a href="/#trekking"><span>06</span>Outside work</a></li>
+          <li><a href="/#faq"><span>07</span>FAQ</a></li>
+          <li><a href="/#contact"><span>08</span>Contact</a></li>
+        </ol>
+      </nav>
+      <div class="menu-foot">
+        <a href="mailto:hello@safalkumarshrestha.com.np">hello@safalkumarshrestha.com.np</a>
+        <a href="/static/safal_cv.pdf">CV (PDF)</a>
+      </div>
+    </div>
+  </div>
+
+  <main id="main" class="wrap">
+    <header id="top" class="page-head">
+      <nav class="crumbs" aria-label="Breadcrumb"><ol><li><a href="/">Home</a></li><li><a href="/projects/">Projects</a></li><li><a href="/projects/hydroponics-ai/" aria-current="page">Hydroponics AI</a></li></ol></nav>
+      <p class="kicker">Reinforcement learning · IoT · In progress</p>
+      <h1><span>Hydroponics AI</span></h1>
+      <p class="lede">A hydroponics controller in which a reinforcement-learning policy decides nutrient dosing from live sensor readings, instead of fixed thresholds.</p>
+      <dl class="pbr">
+        <div><dt>Year</dt><dd>2026 · in progress</dd></div>
+        <div><dt>Funding</dt><dd>STEAM research grant, Ministry of Education, Science and Technology, Nepal</dd></div>
+        <div><dt>Hardware</dt><dd>Sponsored by DFRobot</dd></div>
+      </dl>
+      <div class="cta">
+        <a class="btn btn-primary" href="/#contact">Discuss the research <span class="arrow" aria-hidden="true">→</span></a>
+        <a class="btn" href="/projects/">All projects <span class="arrow" aria-hidden="true">→</span></a>
+      </div>
+    </header>
+
+    <section id="problem" class="section grid" aria-labelledby="problem-h">
+      <h2 id="problem-h"><span class="num"><span>01</span></span> Problem</h2>
+      <div>
+        <div class="prose">
+          <p class="lede">Hydroponic farms dose nutrients on fixed thresholds, which wastes nutrients and caps yield.</p>
+          <p>The research goal is closed-loop control: Q-learning and PPO policies that keep pH and EC on target against environmental drift, deciding each dose from what the sensors report.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="how-it-works" class="section grid" aria-labelledby="how-it-works-h">
+      <h2 id="how-it-works-h"><span class="num"><span>02</span></span> How it works</h2>
+      <div>
+        <figure class="flow-fig">
+          <ol class="flow" style="--n:6" aria-label="How Hydroponics AI works">
+            <li>Sensors</li><li>2× ESP32</li><li>MQTT</li><li>FastAPI</li><li>RL policy</li><li>Pumps &amp; dosing</li>
+          </ol>
+          <figcaption>Fig. 01 — The control loop: sensor readings in, dosing decisions out.</figcaption>
+        </figure>
+        <ol class="research steps">
+          <li><h3>Embedded control</h3><p>Two ESP32 boards and a Raspberry Pi run six sensing and control workflows, reading pH, EC, temperature and humidity sensors.</p></li>
+          <li><h3>Pumps and dosing over MQTT</h3><p>Sensor readings and actuator commands travel over MQTT to drive the pumps and nutrient dosing.</p></li>
+          <li><h3>RL dosing policy</h3><p>A reinforcement-learning policy built with PyTorch and Gymnasium decides the dosing.</p></li>
+          <li><h3>Real-time backend</h3><p>A FastAPI service with MQTT and WebSocket support handles live monitoring and automation, and backs the computer-vision pipeline.</p></li>
+          <li><h3>Live video</h3><p>LiveKit streams the plants in real time, so growth can be monitored remotely.</p></li>
+          <li><h3>Mobile app</h3><p>A Flutter app shows sensor data and live video, and controls the system remotely.</p></li>
+          <li><h3>Edge deployment</h3><p>The system runs on a local edge server for real-time processing and device communication.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section id="sponsorship" class="section grid" aria-labelledby="sponsorship-h">
+      <h2 id="sponsorship-h"><span class="num"><span>03</span></span> DFRobot sponsorship</h2>
+      <div>
+        <div class="prose">
+          <p class="lede">When the project needed hardware, I asked for it.</p>
+          <p>I emailed DFRobot directly with the research vision for Hydroponics AI. After reviewing the proposal and the project’s STEAM grant selection, DFRobot came on board as hardware sponsor and provided the components below.</p>
+        </div>
+        <div class="skill-groups">
+          <div><h3>Sensors</h3><ul><li>pH probes</li><li>CO₂ sensor</li><li>DHT22 temperature &amp; humidity</li><li>Spectrometer sensor</li><li>Waterproof ultrasonic sensor</li></ul></div>
+          <div><h3>Compute</h3><ul><li>ESP32-S3 AI camera</li><li>ESP32-P4</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="stack" class="section grid" aria-labelledby="stack-h">
+      <h2 id="stack-h"><span class="num"><span>04</span></span> Stack</h2>
+      <div>
+        <div class="skill-groups">
+          <div><h3>Machine learning</h3><ul><li>PyTorch</li><li>Gymnasium</li></ul></div>
+          <div><h3>Embedded</h3><ul><li>ESP32 (C++)</li><li>Raspberry Pi</li><li>MQTT</li></ul></div>
+          <div><h3>Backend &amp; app</h3><ul><li>FastAPI</li><li>WebSockets</li><li>LiveKit</li><li>Flutter</li></ul></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="next" class="section grid" aria-labelledby="next-h">
+      <h2 id="next-h"><span class="num"><span>05</span></span> Next project</h2>
+      <div>
+        <a class="big-link" href="/projects/ku-krishi/">KU Krishi <span class="arrow" aria-hidden="true">→</span></a>
+        <p class="stack">Computer vision · Android · Nepal ICT Award 2024</p>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer wrap">
+    <span>© 2026 Safal Kumar Shrestha</span>
+    <span>Chitwan &amp; Kathmandu · <span class="clock">NPT, UTC+5:45</span></span>
+    <a href="#top">Back to top <span class="arrow arrow-up" aria-hidden="true">↑</span></a>
+  </footer>
+</body>
+</html>

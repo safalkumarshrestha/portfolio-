@@ -1,9 +1,8 @@
 /* Safal Kumar Shrestha — portfolio.
    Swiss / International Typographic Style: 12-column grid, one grotesk, black + signal red.
    Project diagrams are transit-map style: stations on a line, a red packet travelling it.
-   Motion: all of it hangs off html.motion. An inline script in <head> sets that class
-   before first paint unless the visitor prefers reduced motion (or switched motion off);
-   the motion button toggles it. static/js/site.js adds scroll reveals and the agent field. */
+   Motion: all of it hangs off html.motion, set by an inline script in <head> before first
+   paint (no JS = static page). static/js/site.js adds scroll reveals and the agent field. */
 
 :root {
   color-scheme: light dark;
@@ -141,23 +140,6 @@ dl, dd { margin: 0; }
 .nav a[aria-current] { color: var(--red); }
 .header-actions { display: flex; align-items: center; gap: 1.25rem; }
 
-.motion-toggle {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.45rem;
-  padding: 0;
-  border: 0;
-  background: none;
-  color: inherit;
-  font: inherit;
-  font-size: 0.8125rem;
-  font-weight: 500;
-  cursor: pointer;
-}
-.motion-toggle::before { content: ""; width: 0.5rem; height: 0.5rem; background: var(--red); }
-:root:not(.motion) .motion-toggle::before { background: none; box-shadow: inset 0 0 0 1.5px var(--red); }
-.motion-toggle:hover { color: var(--red); }
-
 .menu-button {
   display: none;
   padding: 0.5rem 0.85rem;
@@ -218,7 +200,7 @@ dl, dd { margin: 0; }
 
 /* Hero */
 .hero { position: relative; padding: 0.75rem 0 4rem; row-gap: 2rem; }
-.hero::before {
+.hero::before, .page-head::before {
   content: "";
   position: absolute;
   inset: 0 0 auto 0;
@@ -354,7 +336,7 @@ dl, dd { margin: 0; }
 /* More work: two-column index */
 .more { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 3.5rem var(--gap); }
 .mini { position: relative; padding-top: 1.25rem; border-top: 1px solid var(--line); }
-.mini h4 { margin-top: 0.4rem; font-size: 1.5rem; letter-spacing: -0.03em; }
+.mini :is(h3, h4) { margin-top: 0.4rem; font-size: 1.5rem; letter-spacing: -0.03em; }
 .mini > p:not(.kicker):not(.stack) { margin-top: 0.5rem; font-size: 0.9375rem; }
 .mini .flow { margin-top: 1.5rem; }
 .mini .flow li { font-size: 0.75rem; }
@@ -373,7 +355,7 @@ dl, dd { margin: 0; }
     transform-origin: left;
   }
   .mini:hover::before { transform: none; }
-  .mini:hover h4 { transform: translateX(0.4rem); }
+  .mini:hover :is(h3, h4) { transform: translateX(0.4rem); }
 }
 
 /* About */
@@ -386,6 +368,7 @@ dl, dd { margin: 0; }
 .rows > li { display: grid; grid-template-columns: 6rem 1fr; gap: 0.25rem var(--gap); padding: 0.65rem 0; border-bottom: 1px solid var(--line); }
 .rows > li:first-child { padding-top: 0; }
 .rows .meta { font-weight: 600; color: var(--fg); }
+.rows a { white-space: nowrap; }
 
 /* Timeline (experience, education) */
 .timeline > li { display: grid; grid-template-columns: 9.5rem 1fr; gap: 0.25rem var(--gap); }
@@ -422,7 +405,7 @@ dl, dd { margin: 0; }
 
 /* Contact */
 .contact-kicker { max-width: 34rem; font-size: clamp(1.375rem, 2.6vw, 2rem); font-weight: 600; letter-spacing: -0.025em; line-height: 1.2; }
-.contact-lead {
+.contact-lead, .big-link {
   display: inline-block;
   margin-top: 1.5rem;
   padding-bottom: 0.08em;
@@ -434,10 +417,33 @@ dl, dd { margin: 0; }
   overflow-wrap: anywhere;
   background: linear-gradient(var(--red), var(--red)) 0 100% / 100% 3px no-repeat;
 }
-.contact-lead:hover { background-size: 100% 0.18em; }
+.contact-lead:hover, .big-link:hover { background-size: 100% 0.18em; }
 .contact .cta { margin-top: 2rem; }
 .copy-status { min-height: 1.4em; margin-top: 0.75rem; color: var(--muted); font-size: 0.875rem; }
 .alt-email { margin-top: 1rem; max-width: 40rem; color: var(--muted); font-size: 0.875rem; }
+
+/* Project pages: breadcrumb trail, title block, steps, next-project link */
+.page-head { position: relative; padding: 1.5rem 0 4rem; }
+.crumbs ol { display: flex; flex-wrap: wrap; gap: 0.25rem 0.5rem; color: var(--muted); font-size: 0.8125rem; font-weight: 500; }
+.crumbs li + li::before { content: "/"; content: "/" / ""; margin-right: 0.5rem; color: var(--muted); }
+.crumbs a { text-decoration: none; }
+.crumbs a:hover { color: var(--red); }
+.crumbs [aria-current] { color: var(--fg); }
+.page-head .kicker { margin-top: 3.5rem; }
+.page-head h1 { margin-top: 0.75rem; overflow: hidden; padding-bottom: 0.12em; font-size: clamp(3rem, 10vw, 8rem); line-height: 0.95; letter-spacing: -0.055em; }
+.page-head h1 > span { display: inline-block; }
+.page-head .lede { max-width: 46rem; margin-top: 1.5rem; }
+.page-head .pbr { margin-top: 2.5rem; }
+.page-head .cta { margin-top: 2rem; }
+.prose > * + * { margin-top: 1rem; }
+.prose p { max-width: 44rem; }
+.prose + .skill-groups { margin-top: 2.5rem; }
+.flow-fig:first-child { margin-top: 0; }
+.steps { margin-top: 3rem; }
+.mini :is(h3, h4) a { text-decoration: none; }
+.more + .links { margin-top: 3rem; }
+.rows + .links { margin-top: 1.5rem; }
+.big-link + .stack { margin-top: 1rem; }
 
 .site-footer {
   display: flex;
@@ -460,7 +466,6 @@ dl, dd { margin: 0; }
 
 @media (max-width: 62rem) {
   .nav ul { gap: 1.25rem; }
-  .header-actions .motion-toggle { display: none; }
 }
 
 @media (max-width: 56rem) {
@@ -497,7 +502,7 @@ dl, dd { margin: 0; }
 /* ---------- Motion (only while html.motion is set) ---------- */
 
 /* Hero: rule draws, letters rise off a baseline one by one, numerals and copy settle in */
-.motion .hero::before { animation: draw 1s var(--ease) both; }
+.motion .hero::before, .motion .page-head::before { animation: draw 1s var(--ease) both; }
 .motion .masthead h1 .ch { animation: rise 1s var(--ease) both; animation-delay: calc(0.2s + var(--i) * 35ms); }
 .motion .fig { animation: settle var(--dur) var(--ease) 0.9s both; }
 .motion .pitch { animation: settle var(--dur) var(--ease) 0.7s both; }
@@ -516,9 +521,9 @@ dl, dd { margin: 0; }
 
 /* Micro-interactions */
 .motion .btn { transition: background-color 0.25s, color 0.25s, border-color 0.25s; }
-.motion .arrow, .motion .mini h4 { transition: transform 0.4s var(--ease); }
+.motion .arrow, .motion .mini :is(h3, h4) { transition: transform 0.4s var(--ease); }
 .motion .nav a::after, .motion .mini::before { transition: transform 0.5s var(--ease); }
-.motion .contact-lead { transition: background-size 0.45s var(--ease), color 0.2s; }
+.motion .contact-lead, .motion .big-link { transition: background-size 0.45s var(--ease), color 0.2s; }
 .motion .menu:popover-open .menu-links li { animation: settle 0.6s var(--ease) both; }
 .motion .menu:popover-open .menu-links li:nth-child(2) { animation-delay: 40ms; }
 .motion .menu:popover-open .menu-links li:nth-child(3) { animation-delay: 80ms; }
@@ -526,6 +531,11 @@ dl, dd { margin: 0; }
 .motion .menu:popover-open .menu-links li:nth-child(5) { animation-delay: 160ms; }
 .motion .menu:popover-open .menu-links li:nth-child(6) { animation-delay: 200ms; }
 .motion .menu:popover-open .menu-links li:nth-child(7) { animation-delay: 240ms; }
+.motion .menu:popover-open .menu-links li:nth-child(8) { animation-delay: 280ms; }
+
+/* Project pages: title rises, the rest settles in */
+.motion .page-head h1 > span { animation: rise 1s var(--ease) 0.15s both; }
+.motion .page-head > :not(h1, .crumbs) { animation: settle var(--dur) var(--ease) 0.35s both; }
 
 /* Scroll reveals: site.js adds .reveal to items and .in to items and sections once seen */
 .motion .section::before { transition: transform 1.2s var(--ease); }

@@ -1,0 +1,33 @@
+# Safal Kumar Shrestha
+
+> AI/ML engineer from Nepal and B.Tech Artificial Intelligence student at Kathmandu University (expected 2027). Builds computer vision and reinforcement learning systems, the GPU clusters and servers they run on, and Android apps published under the label bala.ai.
+
+- Based in Chitwan and Kathmandu, Nepal (UTC+5:45). Open to remote engineering roles, AI/ML internships, research collaborations and app partnerships.
+- Contact: hello@safalkumarshrestha.com.np
+- Recognition: Nepal ICT Award semi-finalist 2024 (KU Krishi); STEAM Research Grant 2026 from Nepal's Ministry of Education, Science and Technology (Hydroponics AI); DFRobot hardware sponsorship 2026; AI Crusade hackathon 3rd place 2024 (KUAIC).
+
+## Projects
+
+- KU Krishi (2024): offline Flutter app that diagnoses crop diseases such as late blight on the phone with quantized YOLOv8 / MobileNet models and explains the result in Nepali.
+- Hydroponics AI (2026, in progress): reinforcement-learning nutrient dosing (PyTorch, Gymnasium) on two ESP32 boards with MQTT, FastAPI and live video over LiveKit.
+- TrekSathi: offline trekking companion for Nepal's mountain routes (Flutter, Django REST, MongoDB).
+- Like Tiffin: meal-subscription marketplace (Flutter, Firestore, Node.js), backend hosted on a self-built bare-metal server.
+- AIHPC GPU cluster (2025): multi-node Kubernetes cluster with HAProxy and RTX 3080 Ti GPUs for Kathmandu University's Department of AI.
+- PixShop (2023-2024): multi-store e-commerce platform (Next.js, Node.js).
+
+## Experience
+
+- HPC Core Engineer, AIHPC initiative, Department of AI, Kathmandu University (2025)
+- Software Engineer, Android, Shop2App Corp, United States, remote (Feb-Jul 2022)
+- Member, KU Artificial Intelligence Club (2022-present)
+- Education: B.Tech in Artificial Intelligence, Kathmandu University (2022-2027); Diploma in Computer Engineering, Nepal Polytechnic Institute (2018-2022)
+
+## Links
+
+- [Portfolio](https://www.safalkumarshrestha.com.np/)
+- [All projects](https://www.safalkumarshrestha.com.np/projects/)
+- [KU Krishi case study](https://www.safalkumarshrestha.com.np/projects/ku-krishi/)
+- [Hydroponics AI case study](https://www.safalkumarshrestha.com.np/projects/hydroponics-ai/)
+- [CV (PDF)](https://www.safalkumarshrestha.com.np/static/safal_cv.pdf)
+- [GitHub](https://github.com/safalkumarshrestha)
+- [LinkedIn](https://www.linkedin.com/in/safalkumarshrestha/)

@@ -1,30 +1,12 @@
 /* Behaviour for safalkumarshrestha.com.np. The page is complete without this file.
    - Agent field: an ε-greedy agent hunting goals on the masthead grid (canvas).
    - Scroll reveals: adds .reveal to items and .in once each is on screen (CSS animates).
-   - "Pause / Play motion" control (WCAG 2.2.2), remembered per browser.
    - Nav highlights the section in view; the mobile menu closes when a link is chosen.
    - Copy-email button and a live Kathmandu clock in the footer.
-   html.motion is set by the inline script in <head> (off by default under
-   prefers-reduced-motion); while it is off the field shows one still frame. */
+   html.motion is set by the inline script in <head>. */
 (() => {
   const root = document.documentElement;
-  const field = agentField(document.querySelector('.field'));
-  const toggles = document.querySelectorAll('.motion-toggle');
-
-  const apply = (on) => {
-    root.classList.toggle('motion', on);
-    field.run(on);
-    toggles.forEach((t) => { t.textContent = on ? 'Pause motion' : 'Play motion'; });
-  };
-  toggles.forEach((t) => {
-    t.hidden = false;
-    t.addEventListener('click', () => {
-      const on = !root.classList.contains('motion');
-      try { localStorage.setItem('motion', on ? 'on' : 'off'); } catch { /* storage blocked: session-only */ }
-      apply(on);
-    });
-  });
-  apply(root.classList.contains('motion'));
+  agentField(document.querySelector('.field')).run(true);
 
   // Nav: mark the link for the section in the middle of the viewport
   const navLinks = new Map(
@@ -32,10 +14,10 @@
   );
   const spy = new IntersectionObserver((entries) => {
     for (const e of entries) {
-      const link = navLinks.get(e.target.id);
-      if (!e.isIntersecting || !link) continue;
+      if (!e.isIntersecting) continue;
+      // Sections without a nav link (hero, skills, outside work) clear the highlight
       navLinks.forEach((a) => a.removeAttribute('aria-current'));
-      link.setAttribute('aria-current', 'location');
+      navLinks.get(e.target.id)?.setAttribute('aria-current', 'location');
     }
   }, { rootMargin: '-45% 0px -50% 0px' });
   document.querySelectorAll('main section[id]').forEach((s) => spy.observe(s));
@@ -74,7 +56,6 @@
   }
 
   // Scroll reveals: each element animates once; items entering together stagger 70ms apart.
-  // Runs even while motion is off so already-seen items don't re-hide when it is switched on.
   const io = new IntersectionObserver((entries) => {
     let n = 0;
     for (const e of entries) {
